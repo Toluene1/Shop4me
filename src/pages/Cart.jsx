@@ -118,17 +118,17 @@ const Cart = () => {
                                 </div>
                                 <div className="mt-4 d-flex flex-wrap justify-content-evenly">
                                     <h5>Total: ${item.Total} </h5>
-                                    <span className="ms-5" style={{ fontSize: "22px", position: "relative", top: "-10px" }} onClick={() => RemoveCartItem(item.id)}><DeleteFilled /></span>
+                                    <span className="ms-5 text-warning" style={{ fontSize: "22px", position: "relative", top: "-13px" }} onClick={() => RemoveCartItem(item.id)}><DeleteFilled /></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 )}
             </div>
-            <div className=" d-flex justify-content-around">
-                <h1 className="my-auto">Sub-Total : ${Total} </h1>
-                <button className="bg-danger text-white rounded btn-sm my-auto" style={{ width: "60px", height: '40px' }} onClick={ClearChat}>Clear</button>
-            </div>
+            <div className=" d-flex flex-wrap justify-content-around bg-warning p-2 w-75 mx-auto rounded shadow-lg">
+                <button className="btn btn-dark text-warning rounded  my-auto fw-bold" style={{ width: "260px", height: '40px' }} > <h4>Sub-Total : ${Total}</h4></button>
+                <button className="btn btn-dark text-warning rounded btn-sm my-2 fw-bold " style={{ width: "120px", height: '40px' }} onClick={ClearChat}>Clear Cart</button>
+            </div> <br /><br />
         </DefaultLayout >
     )
 }
