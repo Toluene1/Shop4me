@@ -9,6 +9,8 @@ import DefaultLayout from "../Layout/DefaultLayout";
 import { useContext } from "react";
 import { themeContext } from "../provider/ThemeProvider";
 import Item from "antd/es/list/Item";
+import { DeleteFilled } from '@ant-design/icons';
+
 
 const Cart = () => {
 
@@ -116,7 +118,7 @@ const Cart = () => {
                                 </div>
                                 <div className="mt-4 d-flex flex-wrap justify-content-evenly">
                                     <h5>Total: ${item.Total} </h5>
-                                    <button className="ms-5" onClick={() => RemoveCartItem(item.id)}>rv</button>
+                                    <span className="ms-5" style={{ fontSize: "22px", position: "relative", top: "-10px" }} onClick={() => RemoveCartItem(item.id)}><DeleteFilled /></span>
                                 </div>
                             </div>
                         </div>
