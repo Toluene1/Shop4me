@@ -22,7 +22,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand text-dark  bg-warning justify-content-between px-5 gap-4 fixed-top shadow">
-            <div className=" col-sm-2 "><h2>Shop4me</h2></div>
+            <div className=" col-sm-2" style={{ marginLeft: "-24px" }}><Link to={"/"} className='btn btn-link m-none link-dark text-decoration-none'><h2>Shop4me</h2></Link></div>
 
             <div className="mx-2 col-sm-7 d-none d-sm-block text-center ">
                 <button className={`btn btn-light mx-3 p-0 text-white bg-${theme}`}><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Home</Link></button>

@@ -96,7 +96,7 @@ const Cart = () => {
             <h3 className=" text-center p-3"> Cart Section</h3>
             <div className=" gap-3 mx-5 m-auto">
                 {Cart.map(item =>
-                    <div className="contanier-fluid">
+                    <div key={item?.id} className="contanier-fluid">
                         <div key={item?.id} className={`my-4 contanier-fluid bg-${theme} card-body  p-4 mx-auto shadow-lg d-flex flex-wrap`} style={{ maxWidth: "550px" }}>
                             <div className="text-center m-auto col-sm-5">
                                 <img src={item?.image} className="rounded" style={{ width: "70px" }} alt="" /> <br /><br />
