@@ -15,6 +15,7 @@ import { Grid } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import ThemeProvider from './provider/ThemeProvider';
 import Cart from './pages/Cart';
+// import "./app.css"
 
 const router = createBrowserRouter([
   {
