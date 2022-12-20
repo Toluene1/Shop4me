@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import { Rate } from "antd"
 import DefaultLayout from "./Layout/DefaultLayout";
 import useDate from "./hooks/useDate";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -15,22 +17,24 @@ function App() {
 
     return (
 
-        <DefaultLayout className=" mx-auto py-5">
+        <DefaultLayout className=" mx-auto" >
             <br /><br /> <br />
             {/* <h1>{Date}</h1> */}
-            <main className=" d-flex flex-wrap" style={{ height: "600px", marginTop: "0px" }}>
-                <div className="bg-dark col-sm-6 " style={{ height: "560px" }}>
-                    <h2 className="text-warning m-5 fw-bold"> Why Shop4me is committed to neurodiversity</h2>
-                    <h5 className="text-white fw-bold m-5">Knowing that neurodiverse teams can improve their business performance, today’s leading companies are putting in place dedicated inclusion programs.</h5>
-                    <h5 className="text-white fw-bold m-5">Here’s an overview of Orange’s actions, highlighting our what we’re doing to promote neurodiversity in the workplace.</h5>
-                </div>
-                <div className="bg-success col-sm-6" style={{ height: "560px" }}>
-                    <h1>Tolu</h1>
-                    <h1 className="text-warning"> Why Orange is committed to neurodiversity</h1>
-
+            <main className="container-fluid">
+                <div className="row" style={{ height: "520px" }}>
+                    <div className="col-sm-1"></div>
+                    <div className="col-sm-5 mt-5">
+                        <h3 className="text-warning fw-bold mb-5 mt-3"> Why Shop4me is committed to satisfaction!!!</h3>
+                        <h5 className="mt-3 mb-5" >Knowing that diverse teams can improve their cuatomer's <br /> shopping experience, our top teams are putting in place dedicated <br /> inclusion programs. <br /><br />
+                            Here’s an overview of our products products, highlighting our what we’re doing to promote diversity in the e-commerce space.</h5>
+                        <button className="mt-3 w-75 fw-bold rounded text-dark btn btn-warning"><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-dark fw-bold'>Explore Our Products</Link></button>
+                    </div>
+                    <div className=" col-sm-5 text-center my-auto p-2"> <br />
+                        <img className="m-auto" src={"https://www.g2netnigeria.com/wp-content/uploads/2021/01/premium-eCommerce-Website-Development.png"} style={{ maxWidth: "320px", maxHeight: "320px", borderRadius: "30%" }} alt="" />
+                    </div>
+                    <div className="col-sm-1"></div>
                 </div>
             </main>
-
 
 
 
