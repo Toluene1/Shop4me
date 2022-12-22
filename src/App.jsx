@@ -71,7 +71,7 @@ function App() {
                         <p>First class web design service, I cannot recommend them highly enough. They clearly understood what I was looking for and interpreted my brief precisely. They have an excellent structure for getting all the information from the client which takes away a lot of stress!!.</p>
                     </div>
                     <div className="shadow-lg m-3 mx-4 px-3 pt-2" style={{ height: "290px", width: "400px" }}>
-                        <h5 className="text-warning">Cynthia Nsofor</h5>
+                        <h3 className="text-warning">Cynthia Nsofor</h3>
                         <p> Rating : <Rate value={"3"} /></p>
                         <p>The guys at G2Net Nigeria are very helpful and knowledgeable. They have have been patient teaching me how to update my website and they have made the website look great!! - would recommend G2Net to anyone starting a new business and wanting to build a website.</p>
                     </div>
