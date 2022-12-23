@@ -92,7 +92,7 @@ function App() {
                     </div>
                 </div>
 
-                <div className="text-center"> <br /><br />
+                <div className="text-center text-warning"> <br /><br />
                     <p className="fw-bold">Copyright © 2021 - 2070. All rights <br /> reserved</p> <br /><br />
                 </div>
             </main>

@@ -33,8 +33,8 @@ const Navbar = () => {
 
             <div className="mx-2 col-sm-7 d-none d-md-block text-center ">
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Home</Link></button>
-                <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Login</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Products</Link></button>
+                <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Login</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Sign Up</Link></button>
             </div>
             <div className="col-sm-1 ">
@@ -52,18 +52,20 @@ const Navbar = () => {
                 <FaBars className="fs-3" onClick={handleShow} />
             </div>
 
-            <Offcanvas show={show} onHide={handleClose} backdropClassName="bg-warning">
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title> <h2>Links</h2> </Offcanvas.Title>
+            <Offcanvas show={show} onHide={handleClose} className={`bg-${theme}`}>
+                <Offcanvas.Header closeButton className="bg-warning">
+                    <Offcanvas.Title> <h2 className="text-dark ms-4">Links</h2> </Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
-                    <ul class="list-group">
-                        <li class="list-group-item active" aria-current="true">An active item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
+                <Offcanvas.Body className={`bg-${theme}`}>
+                    <ul class="list-group list-group-flush" className={`bg-${theme} ms-auto`}>
+                        <li class="list-group-item"><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Home</h5></Link></li>
+                        <li class="list-group-item"><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Products</h5></Link></li>
+                        <li class="list-group-item"><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Login</h5></Link></li>
                     </ul>
+                    <div className="text-center text-warning">
+                        <button className={`m-2 mx-3 px-2 btn btn-light text-warning btn btn-${theme}`} onClick={ChangeColor}>{
+                            `${theme}` == 'light' ? 'dark' : 'light'}</button>
+                    </div>
                 </Offcanvas.Body>
             </Offcanvas>
         </nav >
