@@ -7,9 +7,6 @@ import { Link } from "react-router-dom";
 // import { Rate } from "antd"
 
 
-
-
-
 function App() {
     const ref = useRef(null);
 
@@ -95,11 +92,6 @@ function App() {
                     <p className="fw-bold">Copyright © 2021 - 2070. All rights <br /> reserved</p> <br /><br />
                 </div>
             </main>
-
-
-
-
-
         </DefaultLayout>
     )
 }

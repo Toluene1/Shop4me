@@ -29,20 +29,20 @@ const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand text-dark  bg-warning justify-content-between px-5 gap-4 fixed-top shadow">
-            <div className=" col-sm-2" style={{ marginLeft: "-24px" }}><Link to={"/"} className='btn btn-link m-none link-dark text-decoration-none'><h2>Shop4me</h2></Link></div>
+            <div className=" col-md-2" style={{ marginLeft: "-24px" }}><Link to={"/"} className='btn btn-link m-none link-dark text-decoration-none'><h2>Shop4me</h2></Link></div>
 
-            <div className="mx-2 col-sm-7 d-none d-md-block text-center ">
+            <div className="mx-2 col-md-7 d-none d-md-block text-center ">
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Home</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Products</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Login</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/signup"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Sign Up</Link></button>
             </div>
-            <div className="col-sm-1 ">
+            <div className="col-md-1 ">
                 <Link to={"/cart"} className='btn btn-link link-dark text-decoration-none  text-dark'><button type="button" style={{ height: "40px" }} className="btn btn-warning position-relative">
                     <span style={{ fontSize: "37px", position: "relative", top: "-25px" }}><ShoppingCartOutlined /></span> <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-black text-warning">{Cart.length}</span>
                 </button></Link>
             </div>
-            <div className="col-sm-1 d-none d-md-block">
+            <div className="col-md-1 d-none d-md-block">
                 <button className={`m-2 mx-3 px-2 btn btn-light text-warning btn btn-${theme}`} onClick={ChangeColor}>{
                     `${theme}` == 'light' ? 'dark' : 'light'}</button>
             </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
                         <Offcanvas.Title> <h2 className="text-dark ms-4">Links</h2> </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className={`bg-${theme}`}>
-                        <ul className="list-group list-group-flush" className={`bg-${theme} ms-auto`}>
+                        <ul class="list-group list-group-flush" className={`bg-${theme} ms-auto`}>
                             <li className="list-group-item"><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Home</h5></Link></li>
                             <li className="list-group-item"><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Products</h5></Link></li>
                             <li className="list-group-item"><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Login</h5></Link></li>

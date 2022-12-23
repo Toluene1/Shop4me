@@ -103,7 +103,6 @@ const Cart = () => {
                                 <span className="fw-bold"> {item.title}</span>
                             </div> <br />
                             <div className="col-sm-7 text-center mx-auto mt-2">
-                                <div>
                                     <span className="fw-bold">price :</span> <br />
                                     <span className="my-4 fw-bold"> ${Number(item?.price).toLocaleString()}</span>
                                     <br />
@@ -131,6 +130,6 @@ const Cart = () => {
             </div> <br /><br />
         </DefaultLayout >
     )
-}
+    }
 
 export default Cart;

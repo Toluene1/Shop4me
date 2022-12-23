@@ -18,6 +18,8 @@ const Signup = () => {
         console.log(createAcc.current);
     }
 
+
+    
     return (
         < DefaultLayout > <br /><br /><br />
             <main>
