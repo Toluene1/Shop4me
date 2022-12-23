@@ -15,14 +15,12 @@ function App() {
 
     const Date = useDate()
 
-
-
     return (
 
         <DefaultLayout className=" mx-auto" >
             <br /><br /> <br />
             {/* <h1>{Date}</h1> */}
-            <main className="container-fluid"> <br /><br />
+            <main className="container-fluid"> <br />
                 <div className="row" >
                     <div className="col-sm-1"></div>
                     <div className="col-sm-5 mt-5">
@@ -88,11 +86,12 @@ function App() {
                     <div className="shadow-lg m-3 mx-4 px-3 pt-2" style={{ height: "290px", width: "400px" }}>
                         <h3 className="text-warning">Mr Adewale Ayuba</h3>
                         <p> Rating : <Rate value={"5"} /></p>
-                        <p>An absolute joy to work with G2Net, our businesses have used them for a number of years now for all our website needs and we have always received a first class service and such a quick to response to any queries I... Read more</p>
+                        <p>An absolute joy to work with G2Net, our businesses have used them for a number of years now for all our website needs and we have always received a first class service and such a quick to response to any queries!!!</p>
                     </div>
                 </div>
 
                 <div className="text-center text-warning"> <br /><br />
+                    <p className="fw-bold">{Date}</p>
                     <p className="fw-bold">Copyright © 2021 - 2070. All rights <br /> reserved</p> <br /><br />
                 </div>
             </main>

@@ -35,7 +35,7 @@ const Navbar = () => {
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Home</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Products</Link></button>
                 <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Login</Link></button>
-                <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Sign Up</Link></button>
+                <button className={`btn btn-${theme} mx-3 p-0 text-white `}><Link to={"/signup"} className='btn btn-link link-dark text-decoration-none text-warning fw-bold'>Sign Up</Link></button>
             </div>
             <div className="col-sm-1 ">
                 <Link to={"/cart"} className='btn btn-link link-dark text-decoration-none  text-dark'><button type="button" style={{ height: "40px" }} className="btn btn-warning position-relative">
@@ -52,22 +52,25 @@ const Navbar = () => {
                 <FaBars className="fs-3" onClick={handleShow} />
             </div>
 
-            <Offcanvas show={show} onHide={handleClose} className={`bg-${theme}`}>
-                <Offcanvas.Header closeButton className="bg-warning">
-                    <Offcanvas.Title> <h2 className="text-dark ms-4">Links</h2> </Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body className={`bg-${theme}`}>
-                    <ul class="list-group list-group-flush" className={`bg-${theme} ms-auto`}>
-                        <li class="list-group-item"><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Home</h5></Link></li>
-                        <li class="list-group-item"><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Products</h5></Link></li>
-                        <li class="list-group-item"><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Login</h5></Link></li>
-                    </ul>
-                    <div className="text-center text-warning">
-                        <button className={`m-2 mx-3 px-2 btn btn-light text-warning btn btn-${theme}`} onClick={ChangeColor}>{
-                            `${theme}` == 'light' ? 'dark' : 'light'}</button>
-                    </div>
-                </Offcanvas.Body>
-            </Offcanvas>
+            <div>
+                <Offcanvas show={show} onHide={handleClose} className={`bg-${theme}`}>
+                    <Offcanvas.Header closeButton className="bg-warning">
+                        <Offcanvas.Title> <h2 className="text-dark ms-4">Links</h2> </Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body className={`bg-${theme}`}>
+                        <ul className="list-group list-group-flush" className={`bg-${theme} ms-auto`}>
+                            <li className="list-group-item"><Link to={"/"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Home</h5></Link></li>
+                            <li className="list-group-item"><Link to={"/products"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Products</h5></Link></li>
+                            <li className="list-group-item"><Link to={"/login"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Login</h5></Link></li>
+                            <li className="list-group-item"><Link to={"/signup"} className='btn btn-link link-dark text-decoration-none text-warning'><h5>Sign Up</h5></Link></li>
+                        </ul>
+                        <div className="text-center text-warning">
+                            <button className={`m-2 mx-3 px-2 btn btn-light text-warning btn btn-${theme}`} onClick={ChangeColor}>{
+                                `${theme}` == 'light' ? 'dark' : 'light'}</button>
+                        </div>
+                    </Offcanvas.Body>
+                </Offcanvas>
+            </div>
         </nav >
     )
 }

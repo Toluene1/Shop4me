@@ -15,6 +15,7 @@ import { Grid } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import ThemeProvider from './provider/ThemeProvider';
 import Cart from './pages/Cart';
+import Signup from './pages/Signup';
 // import "./app.css"
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 
