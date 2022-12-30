@@ -38,39 +38,43 @@ const Signup = () => {
         return (registeredUser = true);
       }
     });
-    // console.log(createAcc.current);
-    // if (registeredUser == true) {
-    //   setalert(true);
-    //   setalertMessage("user already exist, proceed to login");
-    // } else if (
-    //   !createAcc.current.email.includes("@") &&
-    //   createAcc.current.firstName &&
-    //   createAcc.current.lastName &&
-    //   createAcc.current.password
-    // ) {
-    //   setalert(true);
-    //   setalertMessage("email must include @");
-    // } else if (
-    //   createAcc.current.email.includes("@") &&
-    //   createAcc.current.firstName &&
-    //   createAcc.current.lastName &&
-    //   createAcc.current.password.length < 8
-    // ) {
-    //   setalert(true);
-    //   setalertMessage("password must be at least 8 characters");
-    // } else {
-    let newStore = [...Store, { ...createAcc.current }];
-    setStore(newStore);
-    localStorage.setItem("users", JSON.stringify(newStore));
-    setalert(true);
-    setalertMessage("Registered successfully");
-    let input = document.getElementsByTagName("input");
-    for (let index = 0; index < input.length; index++) {
-      input[index].value = "";
+
+    if (registeredUser == true) {
+      setalert(true);
+      setalertMessage("user already exist, proceed to login");
+    } else if (
+      !createAcc.current.email.includes("@") &&
+      createAcc.current.firstName &&
+      createAcc.current.lastName &&
+      createAcc.current.password
+    ) {
+      setalert(true);
+      setalertMessage("email must include @");
+    } else if (
+      createAcc.current.email.includes("@") &&
+      createAcc.current.firstName &&
+      createAcc.current.lastName &&
+      createAcc.current.password.length < 8
+    ) {
+      setalert(true);
+      setalertMessage("password must be at least 8 characters");
+    } else {
+      let newStore = [...Store, { ...createAcc.current }];
+      setStore(newStore);
+      localStorage.setItem("users", JSON.stringify(newStore));
+      setalert(true);
+      setalertMessage("Registered successfully");
+      let input = document.getElementsByTagName("input");
+      for (let index = 0; index < input.length; index++) {
+        input[index].value = "";
+      }
+      console.log(createAcc.current);
     }
-    // }
   };
 
+  const closeAlert = () => {
+    setalert(false);
+  };
   //   useEffect(() => {
   //     firstName.current.focus();
   //   }, []);
@@ -82,11 +86,20 @@ const Signup = () => {
       <br />
       <br />
       <main>
-        <main className="w-50 mx-auto py-5">
+        <main>
+          <div className="text-center mt-5">
+            {alert && (
+              <Alert closeAlert={closeAlert} alertMessage={alertMessage} />
+            )}
+            <h3 className="text-center">Create an Account</h3>
+          </div>
+        </main>
+        <main className="w-50 mx-auto py-1">
           <form onSubmit={SubmitUser} className="bg-warning p-3">
             <div className="mb-3">
               <label className="form-label fw-bold text-dark">First Name</label>
               <input
+                required
                 type="text"
                 onChange={(e) => (createAcc.current.firstName = e.target.value)}
                 className={`form-control outline-warning border-0 text-warning bg-${theme}`}
@@ -95,39 +108,18 @@ const Signup = () => {
             <div className="mb-3">
               <label className="form-label fw-bold text-dark">Last Name</label>
               <input
+                required
                 type="text"
                 onChange={(e) => (createAcc.current.lastName = e.target.value)}
                 className={`form-control outline-warning border-0 text-warning bg-${theme}`}
               />
-            </div>
-            <div className="d-flex flex-wrap justify-content-evenly">
-              <div>
-                <label className="form-label fw-bold text-dark">
-                  Gender :{" "}
-                </label>
-                <select
-                  name="Gender"
-                  id=""
-                  className={`w-50 ms-2 p-1 px-1 rounded text-warning outline-0 border-0 bg-${theme}`}
-                >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              </div>
-              <div className="d-flex flex-wrap align-center ms-5">
-                <label className="form-label fw-bold text-dark">Age</label>
-                <input
-                  type="date"
-                  onChange={(e) => (createAcc.current.age = e.target.value)}
-                  className={`form-control ms-4 w-50 outline-warning border-0 text-warning bg-${theme}`}
-                />
-              </div>
             </div>
             <div className="mb-3">
               <label className="form-label fw-bold text-dark">
                 Email address
               </label>
               <input
+                required
                 type="text"
                 placeholder="name@example.com"
                 onChange={(e) => (createAcc.current.email = e.target.value)}
@@ -137,6 +129,7 @@ const Signup = () => {
             <div className="mb-3">
               <label className="form-label fw-bold text-dark">Password</label>
               <input
+                required
                 type="password"
                 onChange={(e) => (createAcc.current.password = e.target.value)}
                 className={`form-control outline-warning border-0 border-none text-warning bg-${theme}`}
