@@ -91,7 +91,7 @@ const Signup = () => {
             {alert && (
               <Alert closeAlert={closeAlert} alertMessage={alertMessage} />
             )}
-            <h3 className="text-center">Create an Account</h3>
+            <h3 className="text-center text-warning">Create an Account</h3>
           </div>
         </main>
         <main className="w-50 mx-auto py-1">
