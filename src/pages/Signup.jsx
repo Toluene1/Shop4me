@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import Alert from "../components/Alert";
+import "animate.css";
 
 const Signup = () => {
   const {
@@ -87,7 +88,7 @@ const Signup = () => {
       <br />
       <br />
       <br />
-      <main>
+      <main class="animate__animated animate__fadeInLeft">
         <main>
           <div className="text-center mt-5">
             {alert && (

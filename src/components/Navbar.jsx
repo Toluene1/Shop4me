@@ -42,14 +42,6 @@ const Navbar = () => {
       <div className="mx-2 col-md-7 d-none d-md-block text-center ">
         <button className={`btn btn-${theme} mx-3 p-0 text-white `}>
           <Link
-            to={"/"}
-            className="btn btn-link link-dark text-decoration-none text-warning fw-bold"
-          >
-            Home
-          </Link>
-        </button>
-        <button className={`btn btn-${theme} mx-3 p-0 text-white `}>
-          <Link
             to={"/products"}
             className="btn btn-link link-dark text-decoration-none text-warning fw-bold"
           >
