@@ -21,6 +21,7 @@ const Signup = () => {
     setalertMessage,
   } = useContext(themeContext);
 
+  //hooks
   const createAcc = useRef({
     firstName: "",
     lastName: "",
@@ -34,6 +35,7 @@ const Signup = () => {
     e.preventDefault();
     let registeredUser = false;
     Store.map((store) => {
+      //conditions
       if (store.email === createAcc.current.email) {
         return (registeredUser = true);
       }

@@ -11,6 +11,7 @@ import { themeContext } from "../provider/ThemeProvider";
 import Item from "antd/es/list/Item";
 import { DeleteFilled } from "@ant-design/icons";
 
+//cart section
 const Cart = () => {
   const { theme, setTheme, Cart, setCart, AddToCart } =
     useContext(themeContext);
@@ -24,22 +25,26 @@ const Cart = () => {
     return Math.round((Total + value) * 100) / 100;
   }, 0);
 
+  //sum-up on every change
   useEffect(() => {
     setTotal(TotalSum);
     console.log(Total);
   }, [TotalSum]);
 
+  //clear all cart
   const ClearChat = () => {
     setCart([]);
     localStorage.clear();
   };
 
+  //remove cart by ID
   const RemoveCartItem = (id) => {
     let NewItem = Cart.filter((item) => item.id !== id);
     setCart(NewItem);
     localStorage.setItem("cartItem", JSON.stringify(NewItem));
   };
 
+  //increase cart qty by ID
   const IncreaseCartQty = (id) => {
     let NewCart = Cart.map((item) => {
       if (item.id == id) {
@@ -56,6 +61,7 @@ const Cart = () => {
     localStorage.setItem("cartItem", JSON.stringify(NewCart));
   };
 
+  //decrease cart qty by ID
   const DecreaseCartQty = (id, quantity) => {
     if (quantity > 1) {
       let NewCart = Cart.map((item) => {
@@ -74,6 +80,7 @@ const Cart = () => {
     }
   };
 
+  // condition for empty cart
   if (Cart.length == 0) {
     return (
       <DefaultLayout>
@@ -91,7 +98,7 @@ const Cart = () => {
           <br />
           <h3 className="text-danger">
             Click{" "}
-            <button className="rounded bg-warning text-dark px-3">
+            <button className="rounded bg-warning text-dark px-1">
               <Link
                 to={"/products"}
                 className="btn btn-link link-dark text-decoration-none text-dark fw-bold"
@@ -106,6 +113,7 @@ const Cart = () => {
     );
   }
 
+  // if cart is filled
   return (
     <DefaultLayout>
       <br />

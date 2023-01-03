@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import DefaultLayout from "../Layout/DefaultLayout";
 import { themeContext } from "../provider/ThemeProvider";
@@ -8,7 +9,7 @@ import { useRef } from "react";
 import Alert from "../components/Alert";
 
 const Login = () => {
-  //   const [location, setLocation] = useState("");
+  //hooks
   const [geo, setGeo] = useState("");
   const state = useRef({ email: "", password: "" });
   //   const email = useRef(null);
@@ -40,6 +41,7 @@ const Login = () => {
     let isregisteredUser = false;
     console.log(Store);
     Store.map((Store) => {
+      //conditions
       if (
         Store.email === createAcc.current.email &&
         Store.password === createAcc.current.password
@@ -51,7 +53,6 @@ const Login = () => {
     if (isregisteredUser == true) {
       setalert(true);
       setalertMessage("login successful");
-      //   console.log(state.current);
       let input = document.getElementsByTagName("input");
       for (let index = 0; index < input.length; index++) {
         input[index].value = "";
@@ -118,6 +119,20 @@ const Login = () => {
               Submit
             </button>
           </form>
+          <div>
+            <p className="text-center text-warning fw-bold">
+              dont have an account? <br />
+              <li className="list-group-item">
+                <Link
+                  to={"/signup"}
+                  className="btn btn-link link-dark text-decoration-none text-warning"
+                  style={{ marginTop: "-7px" }}
+                >
+                  <span className="text-warning fw-bold">Create one ..</span>
+                </Link>
+              </li>
+            </p>
+          </div>
         </main>
         <main>
           {" "}
@@ -137,11 +152,6 @@ const Login = () => {
           </div>
         </main>
       </main>
-      {/* <main className="text-center">
-                <button className="btn btn-warning" onClick={componentDidMount}>Check Location</button> <br /> <br />
-                <p> Location is : {location}</p>
-                <hp>{geo}</hp>
-            </main> */}
     </DefaultLayout>
   );
 };
