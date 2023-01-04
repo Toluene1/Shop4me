@@ -93,8 +93,8 @@ const Login = () => {
             <h3 className="text-center text-warning">Login Account</h3>
           </div>
         </main>
-        <main className="w-50 mx-auto py-5">
-          <form onSubmit={onlogin} className="bg-warning p-3">
+        <main className="w-50 mx-auto py-5 ">
+          <form onSubmit={onlogin} className="bg-warning p-3 shadow-lg">
             <div className="mb-3">
               <label className="form-label fw-bold text-dark">
                 Email address
@@ -121,7 +121,7 @@ const Login = () => {
             </button>
           </form>
           <div>
-            <p className="text-center text-warning fw-bold">
+            <p className="text-center text-warning fw-bold mt-2">
               dont have an account? <br />
               <li className="list-group-item">
                 <Link

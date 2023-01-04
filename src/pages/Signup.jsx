@@ -97,8 +97,8 @@ const Signup = () => {
             <h3 className="text-center text-warning">Create an Account</h3>
           </div>
         </main>
-        <main className="w-50 mx-auto py-1">
-          <form onSubmit={SubmitUser} className="bg-warning p-3">
+        <main className="w-50 mx-auto py-1 ">
+          <form onSubmit={SubmitUser} className="bg-warning p-3 shadow-lg">
             <div className="mb-3">
               <label className="form-label fw-bold text-dark">First Name</label>
               <input
